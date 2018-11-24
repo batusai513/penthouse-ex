@@ -1,22 +1,8 @@
-require('@babel/register')({
-  root: './',
-  cache: false,
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          node: 'current'
-        }
-      }
-    ]
-  ],
+require('babel-register')({
+  presets: ['es2015', 'stage-0', 'react'],
   plugins: [
-    [
-      '@babel/plugin-transform-runtime',
-      {
-        regenerator: true
-      }
-    ]
+    'transform-object-rest-spread',
+    'transform-class-properties',
+    'dynamic-import-node'
   ]
 });
